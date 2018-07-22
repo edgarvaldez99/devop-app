@@ -1,13 +1,14 @@
 version: 2
 jobs:
     build:
-        service:
-            -docker
+        docker:
+            image: circleci/node:10.7
 
-dependencies:
-    override:
-        - docker build -t devop-app -f ../Dockerfile
-
-test:
-    override:
-        - docker run devop-app npm test
+steps:
+    - checkout
+    - run:
+        name: install_dependencies
+        command: docker build -t devop-app -f ../Dockerfile
+    - run:
+        name: test
+        command: - docker run devop-app npm test
