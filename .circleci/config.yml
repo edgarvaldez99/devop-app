@@ -1,0 +1,13 @@
+version: 2
+jobs:
+    build:
+        service:
+            -docker
+
+dependencies:
+    override:
+        - docker build -t devop-app -f ../Dockerfile
+
+test:
+    override:
+        - docker run devop-app npm test
