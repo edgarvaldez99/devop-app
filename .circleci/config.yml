@@ -2,14 +2,14 @@ version: 2
 jobs:
     build:
         docker:
-            image: node:10.7
+            image: evaldez/devop-node-circleci
 
 steps:
-    - checkout
     - setup_remote_docker
+    - checkout
     - run:
         name: install_dependencies
-        command: docker build -t devop-app -f ../Dockerfile
+        command: docker pull evaldez/devop-node-circleci
     - run:
         name: test
-        command: - docker run devop-app npm test
+        command: - docker run evaldez/devop-node-circleci npm test
