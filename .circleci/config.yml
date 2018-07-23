@@ -3,8 +3,8 @@ jobs:
     build:
         docker:
             image: evaldez/devop-node-circleci
-    steps:
-        - setup_remote_docker
-        - checkout
-        - run: docker pull evaldez/devop-node-circleci
-        - run: docker run evaldez/devop-node-circleci npm test
+        steps:
+            - setup_remote_docker
+            - checkout
+            - run: docker pull evaldez/devop-node-circleci
+            - run: docker run evaldez/devop-node-circleci npm test
