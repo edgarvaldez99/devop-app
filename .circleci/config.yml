@@ -2,7 +2,7 @@ version: 2
 jobs:
     build:
         docker:
-            image: evaldez/devop-node-circleci
+            - image: evaldez/devop-node-circleci
         steps:
             - setup_remote_docker
             - checkout
