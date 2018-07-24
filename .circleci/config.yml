@@ -4,5 +4,5 @@ jobs:
         machine: true
         steps:
             - checkout
-            - run: docker build -t evaldez/devop-node-circleci -f ../Dockerfile
+            - run: docker build -t evaldez/devop-node-circleci ../
             - run: docker run evaldez/devop-node-circleci npm test
