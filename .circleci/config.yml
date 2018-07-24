@@ -1,8 +1,6 @@
 version: 2
 jobs:
     build:
-        docker:
-            - image: evaldez/devop-node-circleci
         steps:
             - checkout
             - run: docker build -t evaldez/devop-node-circleci -f ../Dockerfile
