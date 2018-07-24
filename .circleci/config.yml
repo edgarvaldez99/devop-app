@@ -6,5 +6,5 @@ jobs:
         steps:
             - checkout
             - setup_remote_docker
-            - run: docker pull evaldez/devop-node-circleci
+            - run: docker build -t evaldez/devop-node-circleci -f ../Dockerfile
             - run: docker run evaldez/devop-node-circleci npm test
